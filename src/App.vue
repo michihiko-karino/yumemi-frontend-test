@@ -6,15 +6,12 @@ export default defineComponent({
     const TITLE = 'フロントエンドコーディング試験';
 
     return { TITLE };
-  }
+  },
 });
-
 </script>
 
 <template>
   <h1>{{ TITLE }}</h1>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>
