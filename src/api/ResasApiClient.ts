@@ -24,3 +24,35 @@ export const getPrefectures = async () => {
   );
   return response.data.result;
 };
+
+type YearAndPopulationValue = {
+  year: number;
+  value: number;
+  // rate: number; // 総人口以外のラベルデータセットの場合rateフィールドも存在する。今回は総人口のみ必要のためコメントで対応する
+};
+
+export type PopulationLabeledDataSet = {
+  label: string;
+  data: Array<YearAndPopulationValue>;
+};
+
+export type PopulationCompositionPerYearResponse = {
+  message: null;
+  result: {
+    boundaryYear: number;
+    data: Array<PopulationLabeledDataSet>;
+  };
+};
+
+export const getPopulationCompositionPerYear = async (prefCode: number) => {
+  const response = await apiClient.get<PopulationCompositionPerYearResponse>(
+    'api/v1/population/composition/perYear', {
+      params: {
+        prefCode,
+        cityCode: '-'
+      }
+    }
+  );
+
+  return response.data.result;
+};

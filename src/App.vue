@@ -1,18 +1,25 @@
 <script lang="ts">
 import { defineComponent, onMounted, ref } from 'vue';
-import { getPrefectures, type PrefecturesResponse } from './api/ResasApiClient';
+import { getPrefectures, type PrefecturesResponse, getPopulationCompositionPerYear } from './api/ResasApiClient';
+import { getTotalPopulation } from './lib/getTotalPopulation';
 
 export default defineComponent({
   setup() {
     const TITLE = 'フロントエンドコーディング試験';
     const prefectures = ref<PrefecturesResponse['result'] | null>(null);
-    const selectedPrefCodes = ref<Array<PrefecturesResponse['result'][number]['prefCode']>>([]);
+
+    const onChange = async (prefCode: number) => {
+      const response = await getPopulationCompositionPerYear(prefCode);
+      const totalPopulationDataSet = getTotalPopulation(response);
+
+      console.log(totalPopulationDataSet);
+    };
 
     onMounted(async () => {
       prefectures.value = await getPrefectures();
     });
 
-    return { TITLE, prefectures, selectedPrefCodes };
+    return { TITLE, prefectures, onChange };
   },
 });
 </script>
@@ -20,7 +27,6 @@ export default defineComponent({
 <template>
   <div>
     <h1>{{ TITLE }}</h1>
-    <p>selected prefCodes: {{ selectedPrefCodes }}</p>
     <ul>
       <li
         v-for="prefecture in prefectures!"
@@ -28,9 +34,9 @@ export default defineComponent({
       >
         <input
           :id="`pref-${prefecture.prefCode}`"
-          v-model="selectedPrefCodes"
           type="checkbox"
           :value="prefecture.prefCode"
+          @change="onChange(prefecture.prefCode)"
         ><label :for="`pref-${prefecture.prefCode}`">{{
           prefecture.prefName
         }}</label>
