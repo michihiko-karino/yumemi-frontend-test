@@ -8,7 +8,9 @@
     "build": "vue-tsc --noEmit && vite build",
     "preview": "vite preview",
     "deploy": "npm run build && gh-pages -d dist",
-    "lint": "prettier -w src/*.{ts,vue} src/**/*.{ts,vue} && eslint src --ext .js,.ts,.vue --fix"
+    "lint": "prettier -w **/*.{ts,vue} **/**/*.{ts,vue} && eslint --ext .js,.ts,.vue --fix",
+    "test": "vitest",
+    "coverage": "vitest run --coverage"
   },
   "dependencies": {
     "vue": "^3.2.37"
@@ -19,13 +21,16 @@
     "@vitejs/plugin-vue": "^3.0.3",
     "@vue/eslint-config-prettier": "^7.0.0",
     "@vue/eslint-config-typescript": "^11.0.0",
+    "@vue/test-utils": "^2.0.2",
     "eslint": "^8.23.0",
     "eslint-plugin-vue": "^9.4.0",
     "gh-pages": "^4.0.0",
+    "jsdom": "^20.0.0",
     "prettier": "^2.7.1",
     "sass": "^1.54.6",
     "typescript": "^4.6.4",
     "vite": "^3.0.7",
+    "vitest": "^0.22.1",
     "vue-tsc": "^0.39.5"
   }
 }
