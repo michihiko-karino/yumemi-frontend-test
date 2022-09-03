@@ -1,3 +1,7 @@
 // Vitest Snapshot v1
 
-exports[`mount component 1`] = `"<h1>フロントエンドコーディング試験</h1>"`;
+exports[`mount component 1`] = `
+"<main data-v-ccff5985=\\"\\" data-v-7a7a37b1=\\"\\">
+  <h1 class=\\"title\\" data-v-7a7a37b1=\\"\\">フロントエンドコーディング試験</h1>
+</main>"
+`;

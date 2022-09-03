@@ -1,7 +1,9 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
+import MainLayout from '~/components/layout/MainLayout.vue';
 
 export default defineComponent({
+  components: { MainLayout },
   setup() {
     const TITLE = 'フロントエンドコーディング試験';
 
@@ -11,7 +13,16 @@ export default defineComponent({
 </script>
 
 <template>
-  <h1>{{ TITLE }}</h1>
+  <MainLayout>
+    <h1 class="title">
+      {{ TITLE }}
+    </h1>
+  </MainLayout>
 </template>
 
-<style scoped></style>
+<style scoped>
+.title {
+  font-size: 24px;
+  text-align: center;
+}
+</style>
