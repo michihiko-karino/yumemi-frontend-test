@@ -1,5 +1,8 @@
 import { resasApiHandler } from './mockedServer';
 import { setupServer } from 'msw/node';
+// vitest上のjsdomでcanvasを扱えるようにする
+// 参考: https://github.com/wobsoriano/vitest-canvas-mock#usage
+import 'vitest-canvas-mock';
 
 const server = setupServer(...resasApiHandler);
 

@@ -3,9 +3,10 @@ import { defineComponent } from 'vue';
 import MainLayout from '~/components/layout/MainLayout.vue';
 import { provideStore } from '~/store';
 import PrefectureSelect from '~/components/PrefectureSelect.vue';
+import PopulationChart from '~/components/PopulationChart';
 
 export default defineComponent({
-  components: { MainLayout, PrefectureSelect },
+  components: { MainLayout, PrefectureSelect, PopulationChart },
   setup() {
     const TITLE = 'フロントエンドコーディング試験';
     provideStore();
@@ -22,6 +23,7 @@ export default defineComponent({
     </h1>
 
     <PrefectureSelect />
+    <PopulationChart />
   </MainLayout>
 </template>
 

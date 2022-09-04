@@ -10,6 +10,16 @@ export default defineConfig({
     globals: true,
     environment: 'jsdom',
     setupFiles: ['./test/setup.ts'],
+    deps: {
+      // vitest上のjsdomでcanvasを扱えるようにする
+      inline: ['vitest-canvas-mock'],
+    },
+    threads: false,
+    environmentOptions: {
+      jsdom: {
+        resources: 'usable',
+      },
+    },
   },
   resolve: {
     alias: {

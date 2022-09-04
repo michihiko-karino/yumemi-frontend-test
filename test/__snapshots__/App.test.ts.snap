@@ -7,5 +7,6 @@ exports[`mount component 1`] = `
     <h2 data-v-b5485516=\\"\\">都道府県</h2>
     <ul class=\\"select-fields\\" data-v-b5485516=\\"\\"></ul>
   </div>
+  <p data-v-7a7a37b1=\\"\\">都道府県を選択してください。</p>
 </main>"
 `;
