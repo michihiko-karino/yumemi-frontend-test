@@ -1,0 +1,10 @@
+// Vitest Snapshot v1
+
+exports[`PrefectureSelect > snapshot 1`] = `
+"<div class=\\"root\\" data-v-b5485516=\\"\\">
+  <h2 data-v-b5485516=\\"\\">都道府県</h2>
+  <ul class=\\"select-fields\\" data-v-b5485516=\\"\\">
+    <li data-v-b5485516=\\"\\"><input id=\\"pref-1\\" type=\\"checkbox\\" class=\\"checkbox\\" value=\\"1\\" data-v-b5485516=\\"\\"><label for=\\"pref-1\\" class=\\"label\\" data-v-b5485516=\\"\\">北海道</label></li>
+  </ul>
+</div>"
+`;
