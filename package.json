@@ -25,6 +25,7 @@
     "@vue/eslint-config-typescript": "^11.0.0",
     "@vue/test-utils": "^2.0.2",
     "eslint": "^8.23.0",
+    "eslint-plugin-prettier-vue": "^4.2.0",
     "eslint-plugin-vue": "^9.4.0",
     "gh-pages": "^4.0.0",
     "jsdom": "^20.0.0",

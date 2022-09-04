@@ -5,6 +5,7 @@ extends:
   - 'plugin:vue/vue3-recommended'
   - 'eslint:recommended'
   - '@vue/typescript/recommended'
+  - 'plugin:prettier-vue/recommended'
 parserOptions:
   ecmaVersion: 12
 plugins:
@@ -15,4 +16,10 @@ rules: {
   "semi-spacing": ["error", {"after": true, "before": false}],
   "semi-style": ["error", "last"],
   "no-extra-semi": "error",
+  "prettier-vue/prettier": ["error", {
+      "printWidth": 80,
+      "tabWidth": 2
+      "singleQuote": true
+    }
+  ]
 }
