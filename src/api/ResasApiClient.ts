@@ -1,13 +1,8 @@
 import axios from 'axios';
 
-export const RESAS_API_ENDPOINT = 'https://opendata.resas-portal.go.jp/';
-
 const apiClient = axios.create({
-  baseURL: RESAS_API_ENDPOINT,
-  timeout: 1000,
-  headers: {
-    'X-API-KEY': import.meta.env.VITE_RESAS_API_KEY,
-  },
+  baseURL: import.meta.env.VITE_API_SERVER_ENDPOINT,
+  timeout: 5000,
 });
 
 type Prefecture = {
@@ -21,9 +16,7 @@ export type PrefecturesResponse = {
 };
 
 export const getPrefectures = async () => {
-  const response = await apiClient.get<PrefecturesResponse>(
-    'api/v1/prefectures'
-  );
+  const response = await apiClient.get<PrefecturesResponse>('prefectures');
   return response.data.result;
 };
 
@@ -48,7 +41,7 @@ export type PopulationCompositionPerYearResponse = {
 
 export const getPopulationCompositionPerYear = async (prefCode: number) => {
   const response = await apiClient.get<PopulationCompositionPerYearResponse>(
-    'api/v1/population/composition/perYear',
+    'populationCompositionPerYear',
     {
       params: {
         prefCode,

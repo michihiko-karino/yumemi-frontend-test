@@ -1,5 +1,6 @@
 import { rest } from 'msw';
-import { RESAS_API_ENDPOINT } from '~/api/ResasApiClient';
+
+const SERVER_ENDPOINT = import.meta.env.VITE_API_SERVER_ENDPOINT;
 
 const prefectures = {
   message: null,
@@ -50,11 +51,11 @@ const populationCompositionPerYear = {
 };
 
 export const resasApiHandler = [
-  rest.get(`${RESAS_API_ENDPOINT}api/v1/prefectures`, (req, res, ctx) => {
+  rest.get(`${SERVER_ENDPOINT}prefectures`, (req, res, ctx) => {
     return res(ctx.status(200), ctx.json(prefectures));
   }),
   rest.get(
-    `${RESAS_API_ENDPOINT}api/v1/population/composition/perYear`,
+    `${SERVER_ENDPOINT}population/composition/perYear`,
     (req, res, ctx) => {
       return res(ctx.status(200), ctx.json(populationCompositionPerYear));
     }
