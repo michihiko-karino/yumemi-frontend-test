@@ -29,7 +29,6 @@
     "eslint": "^8.23.0",
     "eslint-plugin-prettier-vue": "^4.2.0",
     "eslint-plugin-vue": "^9.4.0",
-    "gh-pages": "^4.0.0",
     "jsdom": "^20.0.0",
     "postcss": "^8.4.16",
     "postcss-nested": "^5.0.6",

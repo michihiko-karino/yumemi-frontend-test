@@ -6,9 +6,6 @@ import * as path from "path";
 export default defineConfig({
   base: '/yumemi-frontend-test/',
   plugins: [vue()],
-  build: {
-    outDir: 'docs',
-  },
   resolve: {
     alias: {
       "~": path.resolve(__dirname, "src"),
