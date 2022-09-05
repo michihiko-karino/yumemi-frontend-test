@@ -4,10 +4,9 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vercel vite",
     "build": "vue-tsc --noEmit && vite build",
     "preview": "vite preview",
-    "deploy": "npm run build && gh-pages -d dist",
     "lint": "prettier -w **/*.{ts,vue} **/**/*.{ts,vue} && eslint --ext .js,.ts,.vue --fix",
     "test": "vitest",
     "coverage": "vitest run --coverage"
